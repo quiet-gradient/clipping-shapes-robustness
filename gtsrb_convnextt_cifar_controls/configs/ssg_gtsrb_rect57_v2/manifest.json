@@ -1,0 +1,807 @@
+{
+  "campaign": "ssg_gtsrb_rect57_v2",
+  "revision": 2,
+  "status": "PREPARED_NOT_SUBMITTED",
+  "supersedes": "ssg_gtsrb_rect54",
+  "source_epoch": 50,
+  "source_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+  "total_training_runs": 57,
+  "private_training_runs": 54,
+  "nonprivate_training_runs": 3,
+  "gpu_per_job": 1,
+  "groups": [
+    {
+      "group": "natural_lr0025",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_natural_lr0025_s42",
+          "role": "Natural",
+          "optimizer": "SGD",
+          "C": null,
+          "lr": 0.025,
+          "q": null,
+          "beta": 0,
+          "private": false,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        }
+      ]
+    },
+    {
+      "group": "natural_lr0050",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_natural_lr0050_s42",
+          "role": "Natural",
+          "optimizer": "SGD",
+          "C": null,
+          "lr": 0.05,
+          "q": null,
+          "beta": 0,
+          "private": false,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        }
+      ]
+    },
+    {
+      "group": "natural_lr0100",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_natural_lr0100_s42",
+          "role": "Natural",
+          "optimizer": "SGD",
+          "C": null,
+          "lr": 0.1,
+          "q": null,
+          "beta": 0,
+          "private": false,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        }
+      ]
+    },
+    {
+      "group": "c010_lr0025",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c010_lr0025_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.025,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c010_lr0025_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.025,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0025_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.025,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0025_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.025,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0025_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.025,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0025_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.025,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0025_s42"
+        }
+      ]
+    },
+    {
+      "group": "c010_lr0050",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c010_lr0050_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.05,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c010_lr0050_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.05,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0050_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.05,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0050_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.05,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0050_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.05,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0050_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.05,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0050_s42"
+        }
+      ]
+    },
+    {
+      "group": "c010_lr0100",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c010_lr0100_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.1,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c010_lr0100_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.1,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0100_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.1,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0100_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.1,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0100_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.1,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c010_lr0100_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.1,
+          "lr": 0.1,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c010_lr0100_s42"
+        }
+      ]
+    },
+    {
+      "group": "c030_lr0025",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c030_lr0025_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.025,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c030_lr0025_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.025,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0025_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.025,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0025_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.025,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0025_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.025,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0025_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.025,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0025_s42"
+        }
+      ]
+    },
+    {
+      "group": "c030_lr0050",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c030_lr0050_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.05,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c030_lr0050_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.05,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0050_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.05,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0050_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.05,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0050_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.05,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0050_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.05,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0050_s42"
+        }
+      ]
+    },
+    {
+      "group": "c030_lr0100",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c030_lr0100_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.1,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c030_lr0100_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.1,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0100_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.1,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0100_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.1,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0100_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.1,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c030_lr0100_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 0.3,
+          "lr": 0.1,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c030_lr0100_s42"
+        }
+      ]
+    },
+    {
+      "group": "c100_lr0025",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c100_lr0025_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c100_lr0025_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0025_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0025_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0025_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0025_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0025_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0025_s42"
+        }
+      ]
+    },
+    {
+      "group": "c100_lr0050",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c100_lr0050_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.05,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c100_lr0050_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.05,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0050_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.05,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0050_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.05,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0050_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.05,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0050_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0050_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.05,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0050_s42"
+        }
+      ]
+    },
+    {
+      "group": "c100_lr0100",
+      "backend": "unassigned",
+      "runs": [
+        {
+          "run_id": "rect57_cleandp_c100_lr0100_s42",
+          "role": "CleanDP",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.1,
+          "q": null,
+          "beta": 0,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_joint_c100_lr0100_s42",
+          "role": "Joint",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.1,
+          "q": null,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0100_q025_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.1,
+          "q": 0.25,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0100_q1of3_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.1,
+          "q": 0.3333333333333333,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0100_q050_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.1,
+          "q": 0.5,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0100_s42"
+        },
+        {
+          "run_id": "rect57_componentwise_c100_lr0100_q075_s42",
+          "role": "Componentwise",
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.1,
+          "q": 0.75,
+          "beta": 1,
+          "private": true,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 42,
+          "matched_joint_run_id": "rect57_joint_c100_lr0100_s42"
+        }
+      ]
+    }
+  ],
+  "official_test_allowed": false
+}

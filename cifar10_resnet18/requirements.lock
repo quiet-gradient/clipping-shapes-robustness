@@ -1,0 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch==2.4.1+cu121
+torchvision==0.19.1+cu121
+numpy==1.26.4
+scipy==1.14.1
+opacus==1.5.4
+omegaconf==2.3.1
+PyYAML==6.0.3
+tqdm==4.67.1
+./vendor/autoattack-0.1-py3-none-any.whl

@@ -1,0 +1,264 @@
+{
+  "campaign": "gtsrb_reviewer_controls_20260925",
+  "training_runs": 9,
+  "groups": [
+    {
+      "group": "review_uniform_cj_s45",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 45,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s45",
+          "joint_release_dp_claim": false,
+          "run_id": "review_uniform_cj_s45",
+          "role": "Joint",
+          "q": null,
+          "private": true,
+          "control_kind": "uniform_attenuation",
+          "uniform_joint_scale": 0.8140694935,
+          "matched_existing_runs": [
+            "confirm_hard_j_s45",
+            "confirm_hard_r_s45"
+          ]
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_sigma0_j_s45",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 45,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s45",
+          "joint_release_dp_claim": false,
+          "run_id": "review_sigma0_j_s45",
+          "role": "Joint",
+          "q": null,
+          "private": false,
+          "control_kind": "zero_noise",
+          "zero_noise_control": true
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_sigma0_u_s45",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 45,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s45",
+          "joint_release_dp_claim": false,
+          "run_id": "review_sigma0_u_s45",
+          "role": "Componentwise",
+          "q": 0.3333333333333333,
+          "private": false,
+          "control_kind": "zero_noise",
+          "zero_noise_control": true,
+          "matched_joint_run_id": "review_sigma0_j_s45"
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_uniform_cj_s46",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 46,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s46",
+          "joint_release_dp_claim": false,
+          "run_id": "review_uniform_cj_s46",
+          "role": "Joint",
+          "q": null,
+          "private": true,
+          "control_kind": "uniform_attenuation",
+          "uniform_joint_scale": 0.8140694935,
+          "matched_existing_runs": [
+            "confirm_hard_j_s46",
+            "confirm_hard_r_s46"
+          ]
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_sigma0_j_s46",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 46,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s46",
+          "joint_release_dp_claim": false,
+          "run_id": "review_sigma0_j_s46",
+          "role": "Joint",
+          "q": null,
+          "private": false,
+          "control_kind": "zero_noise",
+          "zero_noise_control": true
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_sigma0_u_s46",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 46,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s46",
+          "joint_release_dp_claim": false,
+          "run_id": "review_sigma0_u_s46",
+          "role": "Componentwise",
+          "q": 0.3333333333333333,
+          "private": false,
+          "control_kind": "zero_noise",
+          "zero_noise_control": true,
+          "matched_joint_run_id": "review_sigma0_j_s46"
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_uniform_cj_s47",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 47,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s47",
+          "joint_release_dp_claim": false,
+          "run_id": "review_uniform_cj_s47",
+          "role": "Joint",
+          "q": null,
+          "private": true,
+          "control_kind": "uniform_attenuation",
+          "uniform_joint_scale": 0.8140694935,
+          "matched_existing_runs": [
+            "confirm_hard_j_s47",
+            "confirm_hard_r_s47"
+          ]
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_sigma0_j_s47",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 47,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s47",
+          "joint_release_dp_claim": false,
+          "run_id": "review_sigma0_j_s47",
+          "role": "Joint",
+          "q": null,
+          "private": false,
+          "control_kind": "zero_noise",
+          "zero_noise_control": true
+        }
+      ],
+      "coupled": false
+    },
+    {
+      "group": "review_sigma0_u_s47",
+      "runs": [
+        {
+          "optimizer": "SGD",
+          "C": 1.0,
+          "lr": 0.025,
+          "beta": 1,
+          "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+          "seed_label": 47,
+          "outer_kl_target": "full",
+          "clipping_map": "hard",
+          "rng_coupling": "matched_secret_group",
+          "coupling_group": "hard_dmr_s47",
+          "joint_release_dp_claim": false,
+          "run_id": "review_sigma0_u_s47",
+          "role": "Componentwise",
+          "q": 0.3333333333333333,
+          "private": false,
+          "control_kind": "zero_noise",
+          "zero_noise_control": true,
+          "matched_joint_run_id": "review_sigma0_j_s47"
+        }
+      ],
+      "coupled": false
+    }
+  ],
+  "seeds": [
+    45,
+    46,
+    47
+  ],
+  "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+  "anchor": {
+    "C": 1.0,
+    "lr": 0.025,
+    "q": 0.3333333333333333,
+    "beta": 1
+  },
+  "uniform_joint_scale": 0.8140694935,
+  "uniform_scale_calibration": "sum_i ||R_i|| / sum_i ||J_i|| on fixed 512-record public initialization",
+  "full_dev_aa_after_each_training": true,
+  "official_test_allowed": false,
+  "confirmation_reselection_allowed": false,
+  "one_model_per_parent": true
+}

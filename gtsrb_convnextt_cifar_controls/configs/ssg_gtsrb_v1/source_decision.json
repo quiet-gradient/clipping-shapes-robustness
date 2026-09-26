@@ -1,0 +1,13 @@
+{
+  "renderers": [
+    "cycles",
+    "ogre"
+  ],
+  "selection_rule": "pareto_clean_within_1pp_max_aa",
+  "generator_provenance": "explicitly_accepted_unresolved_with_limitation",
+  "decision_record": "Train with Cycles and OGRE; evaluate all seven saved public-pretraining epochs with AutoAttack; select the highest-clean Pareto checkpoint within one percentage point of maximum AutoAttack accuracy. Generator-training independence remains unresolved.",
+  "independence_established": false,
+  "record_overlap_audit": "reports/ssg_gtsrb_v1/ssg_gtsrb_overlap_audit.json",
+  "official_test_allowed": false,
+  "mlm_allowed": false
+}

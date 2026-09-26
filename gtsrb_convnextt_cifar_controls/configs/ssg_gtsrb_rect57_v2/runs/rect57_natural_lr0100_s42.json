@@ -1,0 +1,12 @@
+{
+  "run_id": "rect57_natural_lr0100_s42",
+  "role": "Natural",
+  "optimizer": "SGD",
+  "C": null,
+  "lr": 0.1,
+  "q": null,
+  "beta": 0,
+  "private": false,
+  "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+  "seed_label": 42
+}

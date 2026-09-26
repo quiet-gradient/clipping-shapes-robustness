@@ -1,0 +1,207 @@
+protocol:
+  name: cifar_interventions_v1
+  stage: interventions
+  arm: U
+  status: frozen_anchor
+  checkpoint_convention: final.pt
+  selection_split: val
+  selection_rule: none
+  clean_accuracy_tolerance_pp: 2.0
+  test_locked: true
+experiment:
+  name: cifar_dmr_autos_u_s45
+  project: dp-robustness
+  seed: 45
+  deterministic: true
+data:
+  name: cifar10
+  root: ${oc.env:DATA_ROOT,./data}
+  batch_size: 512
+  num_workers: 0
+  train_ratio: 0.9
+  seed: 20260820
+  download: false
+  augmentation: true
+  mean:
+  - 0.4914
+  - 0.4822
+  - 0.4465
+  std:
+  - 0.2023
+  - 0.1994
+  - 0.201
+model:
+  name: resnet18
+  num_classes: 10
+  pretrained: false
+  weights_path: artifacts/mlm_final_v1_stage1/trades_b3_s42/checkpoints/checkpoint_pgd10_epoch_170.pt
+  strict_load: false
+  skip_mismatched: true
+  reinit_classifier_on_mismatch: true
+  source_pretrain:
+    protocol: final_v1
+    beta: 3
+    seed: 42
+    epoch: 170
+    selection_lock: configs/pretrain/pretrain_selection_locked.yaml
+  spectral_norm:
+    enabled: false
+    power_iterations: 1
+    coeff: 1.0
+adaptation:
+  method: last_block
+  train_last_block: true
+training:
+  device: auto
+  allow_cpu_fallback: false
+  epochs: 50
+  log_every_n_steps: 20
+  checkpoint_every_epochs: 0
+  physical_batch_size: 32
+  max_train_batches: null
+  max_eval_batches: null
+  selected_checkpoint: final.pt
+  optimizer:
+    name: sgd
+    lr: 0.01510270856068702
+    momentum: 0.9
+    weight_decay: 0.0005
+    nesterov: true
+  scheduler:
+    name: cosine
+    eta_min_factor: 0.01
+diagnostics:
+  gradient_probe:
+    enabled: true
+    source: val
+    size: 512
+    microbatch_size: 4
+    snapshot_fractions:
+    - 0.0
+    - 0.25
+    - 0.5
+    - 0.75
+    - 1.0
+    seed: 20260820
+    run_at_start: true
+    run_at_epoch_end: false
+    fail_on_error: true
+  private_train_gradients:
+    enabled: false
+defenses:
+- name: dp_sgd
+  enabled: true
+  epsilon: 4.0
+  delta: 1.0e-05
+  noise_multiplier: 1.123046875
+  max_grad_norm: 1.0
+  accountant: rdp
+  accountant_crosscheck: prv
+  accountant_crosscheck_tolerance_fraction: 0.1
+  achieved_epsilon_tolerance: 0.02
+  adjacency: add_remove
+  secure_mode: false
+  poisson_sampling: true
+  aggregation_denominator: logical_batch_size
+  componentwise_one_release: true
+  componentwise_q_r: 0.25
+  sensitivity_bound: 1.0
+  auto_s: true
+  auto_s_gamma: 0.1
+  c_task_budget_fraction: 0.8
+  c_regularizer_clip_norm: 1.0
+  c_joint_epsilon_calibration: true
+  absolute_noise_std: 1.123046875
+  q_regularizer: 0.25
+  task_sensitivity_cap: 0.75
+  robust_sensitivity_cap: 0.25
+- name: trades
+  enabled: true
+  dp_strategy: C
+  beta: 1.0
+  epsilon: 0.03137254901960784
+  step_size: 0.00784313725490196
+  steps: 10
+  mean:
+  - 0.4914
+  - 0.4822
+  - 0.4465
+  std:
+  - 0.2023
+  - 0.1994
+  - 0.201
+- name: igr
+  enabled: false
+  lambda_igr: 0.01
+attacks:
+  pgd:
+    enabled: true
+    epsilon: 0.03137254901960784
+    step_size: 0.00784313725490196
+    steps: 20
+    restarts: 1
+    max_batches: null
+  autoattack:
+    enabled: false
+    version: standard
+    norm: Linf
+    epsilon: 0.03137254901960784
+    batch_size: 128
+    seed: 42
+    max_batches: null
+    require_full_test: false
+logging:
+  local:
+    enabled: true
+    dir: outputs
+    include_private_train_metrics: false
+    include_private_train_gradients: false
+  wandb:
+    enabled: true
+    project: ${experiment.project}
+    entity: ${oc.env:WANDB_ENTITY,null}
+    tags:
+    - cifar10
+    - resnet18
+    - dp-sgd
+    - downstream-eps4
+    mode: offline
+    include_private_train_metrics: false
+    include_private_train_gradients: false
+    log_checkpoints_as_artifacts: false
+  mlm:
+    enabled: false
+artifacts:
+  root: ${logging.local.dir}
+  registry_dir: ${artifacts.root}/_artifacts
+  cache_dir: ${artifacts.root}/_cache
+  upload:
+    enabled: false
+    backend: wandb
+strategy: intervention_autos_U
+strategy_config:
+  strategy: intervention_autos_U
+  sensitivity_bound: 1.0
+  noise_multiplier: 1.123046875
+  absolute_noise_std: 1.123046875
+  release_count_per_step: 1
+intervention:
+  map_name: autos
+  arm: U
+  q: 0.25
+  bound: 1.0
+  gamma: 0.1
+  beta: 1.0
+  parent: autos_s45
+  steps: 4400
+  batches_per_epoch: 88
+  sampling_probability: 0.011363636363636364
+  denominator: 512
+  microbatch_size: 32
+  pretrain_sha256: 53211c5f45c3a2a9171448fade104c0d3c8fd7649482827063240b3808796262
+  dataset_sha256: 6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce
+  outer_kl_target: detached_clean
+  zero_direction: zero
+  rng_protocol: ram_only_coupled_v1
+  resume_allowed: false
+  joint_release_dp_claim: false

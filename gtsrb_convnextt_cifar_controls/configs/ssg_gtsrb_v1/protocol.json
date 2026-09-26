@@ -1,0 +1,339 @@
+{
+  "campaign": "ssg_gtsrb_v1",
+  "backend": "datasphere_only",
+  "execution": {
+    "single_superjob": true,
+    "gpu_count": 1,
+    "instance_type": "g2.1",
+    "stages_sequential": true,
+    "commit_completed_stages_independently": true,
+    "artificial_walltime_hours": null
+  },
+  "seed_label": 42,
+  "official_test_allowed": false,
+  "private_training_arms": [
+    "CleanDP",
+    "Joint",
+    "Componentwise"
+  ],
+  "forbidden_training_arms": [
+    "D",
+    "M",
+    "R",
+    "adaptive_q",
+    "AUTO-S",
+    "GeoClip",
+    "DP-PGD",
+    "independent_branch_noise"
+  ],
+  "stage_order": [
+    "overlap_and_provenance_audit",
+    "public_robust_pretrain",
+    "public_checkpoint_lock",
+    "real_public_dev_transfer_sanity",
+    "new_public_probe_calibration",
+    "sgd_clean_joint_grid",
+    "sgd_anchor_lock",
+    "sgd_matched_componentwise",
+    "sgd_report",
+    "adamw_clean_joint_grid",
+    "adamw_anchor_lock",
+    "adamw_matched_componentwise",
+    "optimizer_comparison"
+  ],
+  "public_source": {
+    "sources_manifest": "configs/ssg_gtsrb_v1/sources.json",
+    "renderers_for_audit": [
+      "cycles",
+      "ogre"
+    ],
+    "renderers_for_training": [
+      "cycles",
+      "ogre"
+    ],
+    "rendered_image_count": 43000,
+    "train_rendered_image_count": 34400,
+    "validation_rendered_image_count": 8600,
+    "unique_scene_count": 21500,
+    "split": "official_train_validation",
+    "group_key": [
+      "label",
+      "sample_idx"
+    ],
+    "no_scene_group_crossing": true,
+    "zero_exact_public_real_duplicates_required": true,
+    "generator_training_independence_status": "UNRESOLVED",
+    "decision_file": "configs/ssg_gtsrb_v1/source_decision.json"
+  },
+  "model": {
+    "architecture": "ConvNeXt-T+ConvStem",
+    "resolution": 96,
+    "classes": 43,
+    "source_kind": "clean_imagenet_convstem",
+    "source_checkpoint_sha256": "7d05d68074146c668e45b314348acdd4dbe4b5904a980a99c6c81d91dee0d773",
+    "modify_strides": false,
+    "normalization_count": 1,
+    "public_trainable_stages": [
+      2,
+      3
+    ],
+    "private_trainable_stages": [
+      3
+    ],
+    "trainable_head_norm_and_classifier": true,
+    "reset_head_after_public_pretrain": false
+  },
+  "public_pretrain": {
+    "objective": "TRADES",
+    "beta": 3,
+    "label_smoothing": 0.1,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "peak_lr": 0.001,
+    "weight_decay": 0.01,
+    "epochs": 100,
+    "warmup_epochs": 10,
+    "scheduler": "linear_warmup_cosine",
+    "min_lr": 1e-06,
+    "effective_batch_size": 256,
+    "drop_path": 0.1,
+    "random_erasing": 0.25,
+    "horizontal_flip": false,
+    "save_epochs": [
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100
+    ],
+    "screening": [
+      "synthetic_val_clean",
+      "synthetic_val_pgd10"
+    ],
+    "autoattack": "standard_linf_8over255_all_seven_saved_epochs",
+    "selection_primary": "highest_clean_on_clean_AA_Pareto_within_1pp_of_max_AA",
+    "selection_aa_tolerance_pp": 1.0,
+    "selection_tiebreakers": [
+      "AA_descending",
+      "epoch_ascending"
+    ],
+    "selection_threshold_is_confidence_interval": false,
+    "selected_filename": "public_pretrain_selected.pt",
+    "near_random_clean_gate": "at_most_twice_uniform_chance_2_over_43",
+    "zero_public_autoattack_survivors_blocks_private_training": true,
+    "hyperparameter_grid": false
+  },
+  "attack": {
+    "norm": "Linf",
+    "epsilon": 0.03137254901960784,
+    "inner_steps": 10,
+    "inner_step_size": 0.00784313725490196,
+    "random_start": true,
+    "space": "raw_pixels_0_1",
+    "kl_direction": "KL(p_clean || p_adversarial)",
+    "inner_clean_target_detached": true,
+    "outer_x_adv_detached": true,
+    "outer_clean_distribution_differentiated": true
+  },
+  "private": {
+    "split_path": "artifacts/convnext_gtsrb_v1/splits.json",
+    "train_size": 35189,
+    "dev_size": 4020,
+    "public_probe_size": 512,
+    "public_robust_subset_size": 1024,
+    "epsilon": 4,
+    "delta": 1e-05,
+    "adjacency": "add_remove_image",
+    "sampler": "poisson",
+    "sampling_probability_expression": "512/35189",
+    "aggregation_denominator": 512,
+    "optimizer_steps": 3436,
+    "expected_epochs": 50,
+    "accountants": [
+      "RDP",
+      "PRV"
+    ],
+    "both_accountant_upper_bounds_at_most_target": true,
+    "noise_multiplier": null,
+    "noise_multiplier_status": "RECOMPUTE_AND_VERIFY_BEFORE_PRIVATE_TRAINING",
+    "one_release_per_step": true,
+    "aggregation": "clip_records_sum_add_sigma_times_bound_gaussian_divide512_optimizer",
+    "beta": 1,
+    "checkpoint_rule": "fixed_final_iterate",
+    "warmup_fraction": 0.1,
+    "scheduler": "linear_warmup_cosine",
+    "checkpoint_epochs": [
+      0,
+      5,
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "geometry_epochs": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "curve_evaluation": [
+      "clean_on_4020",
+      "CE_on_4020",
+      "PGD20_on_1024",
+      "TRADES_task_and_robust_losses_for_TRADES_arms"
+    ],
+    "final_evaluation": [
+      "APGD_CE_on_1024",
+      "APGD_T_on_1024"
+    ],
+    "optional_finalist_full_autoattack": true,
+    "privacy_scope": "per_fixed_run_only_not_HPO_campaign_or_correlated_pair_joint_release"
+  },
+  "calibration": {
+    "initialization": "selected_public_pretrain_not_old_pilot",
+    "C_CE_ref": "median_public_probe_norm_g",
+    "C_TRADES_ref": "median_public_probe_norm_g_plus_h",
+    "clean_C_multipliers": [
+      0.5,
+      1
+    ],
+    "trades_training_C_multipliers": [
+      0.25,
+      1
+    ],
+    "trades_diagnostic_C_multipliers": [
+      0.25,
+      1,
+      4
+    ],
+    "norm_quantiles": [
+      0.01,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.99
+    ],
+    "source_checkpoint_sha256": null
+  },
+  "sgd": {
+    "family": "SGD",
+    "momentum": 0.9,
+    "nesterov": true,
+    "weight_decay": 0.0005,
+    "learning_rates": [
+      0.01,
+      0.03,
+      0.1
+    ]
+  },
+  "adamw": {
+    "family": "AdamW",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.005,
+    "learning_rates": [
+      0.0001,
+      0.00045,
+      0.002
+    ],
+    "requires_sgd_complete": true
+  },
+  "grid_per_optimizer": {
+    "CleanDP": 6,
+    "Joint": 6,
+    "Componentwise_max": 8,
+    "anchor_A": "highest_clean_joint_clean_PGD_frontier",
+    "anchor_B": "highest_PGD_joint_clean_PGD_frontier",
+    "deduplicate_equal_anchors": true,
+    "matched_q": [
+      0.1,
+      0.25,
+      0.3333333333333333,
+      0.5
+    ],
+    "automatic_boundary_extension": false,
+    "arbitrary_clean_floor": false
+  },
+  "matched_randomness": {
+    "shared_streams": [
+      "initialization",
+      "poisson",
+      "augmentation",
+      "adversarial_start",
+      "gaussian"
+    ],
+    "published": "digests_only_no_secret_seeds_masks_or_noise_tensors",
+    "correlated_joint_release_epsilon4_claim": false
+  },
+  "geometry": {
+    "instrument_before_private_training": true,
+    "diagnostic_q": [
+      0.05,
+      0.1,
+      0.25,
+      0.3333333333333333,
+      0.5,
+      0.75
+    ],
+    "queries": [
+      "g",
+      "h",
+      "s",
+      "J",
+      "U",
+      "D",
+      "M",
+      "R"
+    ],
+    "D_M_R_training": false,
+    "raw_data_scope": "fixed_public_probe_only",
+    "full_gram": true,
+    "decompose_delta_task_robust": true,
+    "projection_slack_nonnegative_up_to_tolerance": true,
+    "blocks": [
+      "stage3_downsample",
+      "stage3_block0",
+      "stage3_block1",
+      "stage3_block2",
+      "head_norm",
+      "classifier"
+    ]
+  },
+  "optimizer_telemetry": {
+    "every_private_step": true,
+    "private_vectors_saved": false,
+    "source": "sanitized_gradient_and_optimizer_postprocessing_only",
+    "common": [
+      "sanitized_gradient_norm",
+      "parameter_update_norm",
+      "gradient_update_cosine",
+      "learning_rate",
+      "weight_decay_contribution_norm"
+    ],
+    "SGD": [
+      "momentum_buffer_norm",
+      "nesterov_direction_norm"
+    ],
+    "AdamW": [
+      "first_moment_norm",
+      "second_moment_rms",
+      "preconditioned_step_norm",
+      "moment_gradient_cosine",
+      "preconditioned_gradient_cosine"
+    ]
+  }
+}

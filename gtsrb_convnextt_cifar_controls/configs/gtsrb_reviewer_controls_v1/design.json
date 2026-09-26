@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-09-25",
+  "status": "FROZEN_BEFORE_NEW_TRAINING",
+  "dataset": "GTSRB",
+  "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+  "anchor": {
+    "clipping_map": "hard",
+    "C": 1.0,
+    "learning_rate": 0.025,
+    "q_componentwise": 0.3333333333333333,
+    "beta": 1,
+    "outer_kl_target": "full"
+  },
+  "uniform_attenuation": {
+    "query": "Q_i = c * clip_C(g_i + h_i)",
+    "c": 0.8140694935,
+    "calibration": "sum_i ||R_i|| / sum_i ||J_i|| on the fixed ordered 512-record public initialization",
+    "seed45_unrounded": 0.8140694935347264,
+    "seed46_unrounded": 0.8140694934987524,
+    "seed47_unrounded": 0.8140694934987524,
+    "sensitivity_bound": 1.0,
+    "noise_multiplier": 1.22344970703125,
+    "absolute_noise_std_before_averaging": 1.22344970703125,
+    "reason_bound_not_tightened": "Keep the same absolute Gaussian noise as the matched hard Joint and R controls."
+  },
+  "zero_noise": {
+    "arms": [
+      "Joint",
+      "Componentwise"
+    ],
+    "seeds": [
+      45,
+      46,
+      47
+    ],
+    "bounded_per_record_query": true,
+    "gaussian_release_count": 0,
+    "privacy_guarantee": "NONE",
+    "purpose": "Measure the Joint-versus-Componentwise contrast without DP noise."
+  },
+  "runs": 9,
+  "one_model_per_parent": true,
+  "official_test_allowed": false,
+  "reselection_allowed": false
+}

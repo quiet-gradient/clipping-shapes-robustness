@@ -1,0 +1,5 @@
+base_config: ../base.yaml
+protocol: {evidence_role: diagnostic_reference}
+experiment: {run_id: clean_ce_s42, seed: 42}
+objective: {name: ce, beta: null}
+

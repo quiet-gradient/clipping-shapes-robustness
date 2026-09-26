@@ -1,0 +1,11 @@
+base_config: ../base.yaml
+protocol: {evidence_role: independent_stream_replication}
+experiment: {run_id: trades_b3_s44, seed: 44}
+objective: {name: trades, beta: 3.0}
+reproducibility:
+  initialization_seed: 42
+  dataloader_seed: 44001
+  augmentation_seed: 44002
+  trades_seed: 44003
+  pgd_seed: 44004
+

@@ -1,0 +1,132 @@
+format_version: 1
+final_lock: true
+launch_authorized_by_this_file: false
+official_test_allowed: false
+selection_context:
+  shared_gamma: 0.1
+  robust_beta: 1
+  selection_data: fixed_public_real_dev_4020_seed42
+  selected_after_viewing_dev_results: true
+  preregistered_before_dev: false
+  joint_rule: maximum_full_dev_AA_within_shared_gamma
+  componentwise_rule: maximum_full_dev_AA_subject_to_clean_at_least_selected_Joint
+  clean_dp_rule: maximum_full_dev_AA_within_shared_gamma_subject_to_clean_at_least_selected_Joint
+  ties_if_any: higher_clean_then_lower_LR_then_lexical_run_id
+  ties_affect_current_candidates: false
+  componentwise_clean_floor_percent: 62.11442786069652
+  exact_control_rule: same_gamma_beta_LR_bound_noise_steps_source_and_seed_label_as_Componentwise
+  practical_and_matched_Joint_identical: true
+  same_seed_label_does_not_imply_same_realized_noise: true
+  preserve_full_frontiers_and_unconstrained_optimum: true
+  post_confirmation_or_test_reselection: forbidden
+shared_protocol:
+  grid_path: configs/ssg_gtsrb_autos30_v1/calibration_and_grid.json
+  config_hash_convention: canonical_config_sha256 binds the executed scientific_config.json,
+    not the grid entry; the latter uses integer C/lr_multiplier while the runtime
+    normalizes them to floats. Numeric config values are checked equal separately.
+  source_epoch: 50
+  source_checkpoint_sha256: 862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60
+  clipping_map: auto_s
+  sensitivity_bound: 1.0
+  gamma: 0.1
+  noise_multiplier: 1.22344970703125
+  absolute_noise_std_before_averaging: 1.22344970703125
+  logical_batch_size: 512
+  physical_batch_size: 128
+  optimizer_steps: 3436
+  target_epsilon: 4
+  delta: 1.0e-05
+  sampling: poisson_add_remove_image
+  sampling_probability_expression: 512/35189
+  optimizer: SGD
+  inherited_trained_head: true
+  outer_kl: full_clean_and_adversarial_branches
+  adversarial_input_detached_in_outer: true
+  checkpoint_rule: fixed_final_iterate
+  dev_order_sha256: da0b5fa6364952d92f3d6e9356eaf4f23dcfe1a6b06871e1aab07be8bce28a24
+alternative_robustness_optimal_observed:
+  run_id: soft30_componentwise_g0100_q1of3_lr200_s42
+  gamma: 0.1
+  beta: 1
+  learning_rate: 0.08608209243412537
+  q: 0.3333333333333333
+  dev_clean_percent: 54.57711442786069
+  dev_aa_percent: 14.925373134328359
+  meets_primary_clean_floor: false
+coverage:
+  remote_committed_trainings: 30
+  planned_trainings: 30
+  full_dev_AA: 30
+  missing_AA: []
+  local_verified_trainings: 30
+  public_geometry_snapshots: 180
+open_gates:
+- enhanced_attack_diagnostics
+- original_privacy_crosscheck_disposition
+- confirmation_and_DMR_launch_authorization_and_preflight
+boundaries:
+  hard_lock_changed: false
+  new_training_jobs_submitted: 0
+  dev_aa_jobs_submitted: 5
+  dev_aa_deployment: artifacts/gtsrb_soft_aa_tail5_20260924_f9cfd3b
+  q_boundary_extension_authorized: false
+  new_calibration_or_gamma_sweep_authorized: false
+  all_five_dev_aa_jobs_successful: true
+immutable_selection: true
+final_lock_scope: hyperparameters_and_role_assignment_only_not_attack_or_privacy_gate_closure
+roles:
+  Joint_practical:
+    run_id: soft30_joint_g0100_lr100_s42
+    role: Joint
+    beta: 1
+    gamma: 0.1
+    learning_rate: 0.04304104621706269
+    q: null
+    config_path: results/ssg_gtsrb_night_20260922/autos_collected/verified/soft30_joint_g0100_lr100_s42/scientific_config.json
+    canonical_config_sha256: 5afe4e0f2a8f61e149ef4dd5865ef855f18be0f30ed021e886ad85496bf96a04
+    checkpoint_sha256: e4b5de4658d0fe301b7bcf97f9ac3a30197e4c6a90998f10e87a6f6a981e6575
+    dev_clean_percent: 62.11442786069652
+    dev_aa_percent: 14.850746268656717
+  Componentwise:
+    run_id: soft30_componentwise_g0100_q025_lr100_s42
+    role: Componentwise
+    beta: 1
+    gamma: 0.1
+    learning_rate: 0.04304104621706269
+    q: 0.25
+    config_path: results/ssg_gtsrb_night_20260922/autos_collected/verified/soft30_componentwise_g0100_q025_lr100_s42/scientific_config.json
+    canonical_config_sha256: e86b84ac5f66aa29e792e63ddd8a39c9427524a244aba26790557d95489715e4
+    checkpoint_sha256: 695696db01f2fdb55f5e678a9b8c3dca1abbfcbf68f5d88d16a234f84b1fab76
+    dev_clean_percent: 62.78606965174129
+    dev_aa_percent: 13.756218905472636
+  JointMatched:
+    alias_of: Joint_practical
+    run_id: soft30_joint_g0100_lr100_s42
+    duplicate_training_required: false
+  CleanDP_shared_gamma:
+    run_id: soft30_cleandp_g0100_lr200_s42
+    role: CleanDP
+    beta: 0
+    gamma: 0.1
+    learning_rate: 0.08084591581898012
+    q: null
+    config_path: results/ssg_gtsrb_night_20260922/autos_collected/verified/soft30_cleandp_g0100_lr200_s42/scientific_config.json
+    canonical_config_sha256: 785b7b0e9a3326c678fc1008c284f252d8906a56c11a6a10db9aa8d8fd4a7d9e
+    checkpoint_sha256: 957aa84f80eda86bf7b8b3e69decd9f0d2005ae7774926beeb01d8bc9aaa407d
+    dev_clean_percent: 67.53731343283582
+    dev_aa_percent: 10.646766169154228
+    not_claimed_best_across_all_gamma: true
+attack_adequacy: PENDING_ENHANCED_DIAGNOSTICS
+selection_evidence:
+  report: reports/ssg_gtsrb_v1/autos30_full_dev_aa.json
+  report_sha256: cfae1a3c4c1d1766620784f5f696180404d5772de957f0bfdb30297e299c8137
+  training_audit: reports/ssg_gtsrb_v1/autos30_results.json
+  training_audit_sha256: 1ebe9ce65bc920f0b799b5284f62a25db8ea392d9bc30f30ff28dd8d2c8c45b0
+  AA_candidates_unchanged_after_final_five: true
+q_boundary_assessment:
+  balanced_q: 0.25
+  unconstrained_max_AA_q: 0.3333333333333333
+  AA_improves_from_one_third_to_one_quarter_at_matched_LR: false
+  automatic_one_sixth_extension_triggered: false
+  note: Across all three matched LRs q=.25 improves clean but lowers AA versus q=1/3.
+    No extension launched.

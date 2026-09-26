@@ -1,0 +1,13 @@
+{
+  "run_id": "rect57_componentwise_c010_lr0050_q075_s42",
+  "role": "Componentwise",
+  "optimizer": "SGD",
+  "C": 0.1,
+  "lr": 0.05,
+  "q": 0.75,
+  "beta": 1,
+  "private": true,
+  "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+  "seed_label": 42,
+  "matched_joint_run_id": "rect57_joint_c010_lr0050_s42"
+}

@@ -1,0 +1,215 @@
+{
+  "protocol": "cifar_interventions_v1",
+  "runs": [
+    {
+      "run_id": "cifar_dmr_hard_j_s45",
+      "parent": "hard_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_j_s45.yaml",
+      "config_sha256": "fb1fac6171812f1a8ecec2689184759d0f751fd8bc8bcba8b5d2c899189f951c",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_u_s45",
+      "parent": "hard_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_u_s45.yaml",
+      "config_sha256": "ed70ee136ee1b7ede10cf3425bda287835b17801b3f8a8180561961a646ba8da",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_d_s45",
+      "parent": "hard_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_d_s45.yaml",
+      "config_sha256": "35be73d19249bc53c22a1a1e6090a624701044a538978cfce37ced3c27299ad7",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_m_s45",
+      "parent": "hard_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_m_s45.yaml",
+      "config_sha256": "e81c8e37897bfa453f47da7dc08503ff1e940032099908c89f7505407ed77f52",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_r_s45",
+      "parent": "hard_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_r_s45.yaml",
+      "config_sha256": "4a72d2973468d2ac16d2e64d4e57a03cbddd2d5dcc6fd3babb11efe866333a6a",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_j_s46",
+      "parent": "hard_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_j_s46.yaml",
+      "config_sha256": "491681ba4f72d7f7b3d1f838dd71584ec04ce2825eba521c0aec67404f575ce0",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_u_s46",
+      "parent": "hard_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_u_s46.yaml",
+      "config_sha256": "98719bd19899f5d793fa7ca36656046113b842259a7593de13a6638c4da68455",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_d_s46",
+      "parent": "hard_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_d_s46.yaml",
+      "config_sha256": "bef8bd043a82d4448cee18c0efd3165f8dfb15ef18c0a95e0e5c3224cfa7274f",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_m_s46",
+      "parent": "hard_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_m_s46.yaml",
+      "config_sha256": "1579210ec6ab94dcbd56512cf42c63afef2343b2de0057a5ec59de2d5d599524",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_r_s46",
+      "parent": "hard_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_r_s46.yaml",
+      "config_sha256": "2ee55ab739b7f543dc41902b2628ea2d626a8fd924a15cfeba99f267a37e0124",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_j_s47",
+      "parent": "hard_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_j_s47.yaml",
+      "config_sha256": "0ee651707e073edcf5704011498081fbb3d57169cb2641fdfb7c1a7b56cb455f",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_u_s47",
+      "parent": "hard_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_u_s47.yaml",
+      "config_sha256": "5f9fee89c376b3cfd3f6f4b17e845ebe425744280b67d74bf343ebf922808df8",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_d_s47",
+      "parent": "hard_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_d_s47.yaml",
+      "config_sha256": "72618af9b377ce6699ffc46011bdb91f590e7d30fd318a91e09fc787365d238e",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_m_s47",
+      "parent": "hard_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_m_s47.yaml",
+      "config_sha256": "7b0277dcf48d8d8c19dad1da432ec85cf6838207fc9e6338d7f7fd1b28a8c42d",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_hard_r_s47",
+      "parent": "hard_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_hard_r_s47.yaml",
+      "config_sha256": "1e3a69bf6d35f6cfcba49b8fe77b270f4d84238b53f546438e8466e222eff941",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_j_s45",
+      "parent": "autos_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_j_s45.yaml",
+      "config_sha256": "70b0f5e7bf803175da7a372d923437d5697b2267a9159158dbe3c8e4e059d084",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_u_s45",
+      "parent": "autos_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_u_s45.yaml",
+      "config_sha256": "4899258eeb663695ae6a5fd6378c40ea82cdcbcda040289dac4eb8f3584c3d26",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_d_s45",
+      "parent": "autos_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_d_s45.yaml",
+      "config_sha256": "d82de6bde4ebed1d5ea40c382ce77e63bedae88c6eafee16deafd8a2f3ca212e",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_m_s45",
+      "parent": "autos_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_m_s45.yaml",
+      "config_sha256": "fcb3ca9104f664ec6ee6b17257ab78c075c7d09212bb1f69d75c80ea30ba1591",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_r_s45",
+      "parent": "autos_s45",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_r_s45.yaml",
+      "config_sha256": "987201f28116f647cf9ac4a737d90d6323a6933c32144aa8285d688658c87b9c",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_j_s46",
+      "parent": "autos_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_j_s46.yaml",
+      "config_sha256": "7b282b433d003fadf564d770c247f6e85d47fdf7c924422e87e518778aef23eb",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_u_s46",
+      "parent": "autos_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_u_s46.yaml",
+      "config_sha256": "b6cd0047abf5ba7a8f6c9f1b2ba79c996136e98ddd6067a2ff41aae02eedb0bd",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_d_s46",
+      "parent": "autos_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_d_s46.yaml",
+      "config_sha256": "54c1160e30942d6488f0ce1426f8c92309e14394367d514b1d17f922dc3c07d3",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_m_s46",
+      "parent": "autos_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_m_s46.yaml",
+      "config_sha256": "3c2b488d18b76ce157a976c6fe36c4255cff4b6bbaeb9e3d63c69aa505eac9f7",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_r_s46",
+      "parent": "autos_s46",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_r_s46.yaml",
+      "config_sha256": "c4b50232b24e96ef3a588d20382a8ff15074b1a0147423435ba85527f872a08f",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_j_s47",
+      "parent": "autos_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_j_s47.yaml",
+      "config_sha256": "9874668ffe2db1580fb82d0300640af91c1c740f4d21d279764d7e9c419700ef",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_u_s47",
+      "parent": "autos_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_u_s47.yaml",
+      "config_sha256": "325d93ec45a126423b6a853765f84793002c1aabd354db94c7c0691ea65e709e",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_d_s47",
+      "parent": "autos_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_d_s47.yaml",
+      "config_sha256": "f34a27b65c91224caea91f54c0e2550bd0a6169910af9c40cc1e382caa5a15c5",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_m_s47",
+      "parent": "autos_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_m_s47.yaml",
+      "config_sha256": "4c9c1b042502cca79e3ee62b921ac4e37e5ac87027096e00db2f92ce4ccf7322",
+      "status": "PREPARED_NOT_SUBMITTED"
+    },
+    {
+      "run_id": "cifar_dmr_autos_r_s47",
+      "parent": "autos_s47",
+      "config": "configs/cifar_interventions_v1/cifar_dmr_autos_r_s47.yaml",
+      "config_sha256": "79d2ffa7fb3255b34e648e3eeaa62e2f11dd6d3be3381528279793a47a8d99af",
+      "status": "PREPARED_NOT_SUBMITTED"
+    }
+  ]
+}

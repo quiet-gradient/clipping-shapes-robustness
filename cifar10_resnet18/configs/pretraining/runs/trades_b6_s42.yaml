@@ -1,0 +1,5 @@
+base_config: ../base.yaml
+protocol: {evidence_role: beta_selection}
+experiment: {run_id: trades_b6_s42, seed: 42}
+objective: {name: trades, beta: 6.0}
+

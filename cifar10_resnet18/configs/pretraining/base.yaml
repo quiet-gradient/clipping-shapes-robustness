@@ -1,0 +1,96 @@
+schema_version: 1
+
+protocol:
+  name: final_public_cifar100_v1
+  evidence_role: final
+
+experiment:
+  run_id: ???
+  seed: 42
+  split_seed: 20260818
+
+data:
+  name: cifar100
+  num_classes: 100
+  image_size: 32
+  train_per_class: 490
+  validation_per_class: 10
+  normalize_in_transform: false
+  mean: [0.5071, 0.4867, 0.4408]
+  std: [0.2675, 0.2565, 0.2761]
+  augmentation:
+    random_crop_size: 32
+    random_crop_padding: 4
+    horizontal_flip_probability: 0.5
+
+model:
+  architecture: cifar_resnet18
+  initialization: random_tensor_seed_42
+  trainable_scope: full_model
+  normalization: group_norm
+  group_norm_groups: 32
+
+objective:
+  name: ???
+  beta: null
+  threat_model: linf
+  epsilon: 0.03137254901960784
+  steps: 10
+  step_size: 0.00784313725490196
+  random_start: true
+  attack_init: gaussian
+  gaussian_std: 0.001
+  pixel_min: 0.0
+  pixel_max: 1.0
+  beta_semantics: kl_multiplier
+
+training:
+  epochs: 200
+  batch_size: 256
+  shuffle: true
+  drop_last: false
+  label_smoothing: 0.0
+  gradient_accumulation_steps: 1
+  precision: fp32
+  amp: false
+  tf32: false
+  optimizer:
+    name: sgd
+    learning_rate: 0.1
+    momentum: 0.9
+    weight_decay: 0.0005
+    nesterov: true
+  scheduler:
+    name: multistep
+    milestones: [100, 150]
+    gamma: 0.1
+
+validation:
+  robust_every_epochs: 1
+  pgd10:
+    epsilon: 0.03137254901960784
+    steps: 10
+    step_size: 0.00784313725490196
+    restarts: 1
+
+autoattack:
+  version: standard
+  epsilon: 0.03137254901960784
+  examples: 1000
+  batch_size: 256
+  seed: ${experiment.seed}
+
+selection:
+  pgd_top_k: 3
+  binomial_examples: 1000
+  pgd_minus_square_instability_threshold: 0.08
+  within_run_tiebreak: [clean_accuracy_desc, epoch_asc]
+  cross_beta_tiebreak: [clean_accuracy_desc, beta_asc, epoch_asc]
+
+reproducibility:
+  deterministic_algorithms: true
+  initialization_seed: 42
+  dataloader_seed: 42001
+  augmentation_seed: 42002
+  trades_seed: 42003
+  pgd_seed: 42004

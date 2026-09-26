@@ -1,0 +1,18 @@
+{
+  "campaign": "ssg_gtsrb_v1",
+  "source_path": "artifacts/convnext_gtsrb_v1/splits.json",
+  "source_sha256": "ca3d934c200b648727705177a2c009a27d7997fcef798825043b6a4b16b3a22a",
+  "new_split_created": false,
+  "split_unit": "class_and_track",
+  "privacy_unit": "image",
+  "record_count": 39209,
+  "subset_sizes": {"private": 35189, "dev": 4020, "probe": 512, "trajectory": 1024},
+  "hashes": {
+    "private": "b74f1b82bd91e22744fb6b9acd2adddf6b158688f1a39a4f2ed4f9bbf8bcf76a",
+    "dev": "da0b5fa6364952d92f3d6e9356eaf4f23dcfe1a6b06871e1aab07be8bce28a24",
+    "probe": "93082df614fe82cf970bcb142bd8fddd06262614922d6c8fed906c7de0e43ad7",
+    "trajectory": "ad4acfa3d0b62c1a57162f8cf8bc6a7b3ada3041dc6ac1dbf27752a9a59c9919"
+  },
+  "split_hash": "8a9cb192c38a7c71a83ce3087ed2310ac7200a203fad17bd08923c514dd03a1f",
+  "official_test_loaded": false
+}

@@ -1,0 +1,34 @@
+{
+  "campaign": "ssg_gtsrb_v1",
+  "backend": "datasphere",
+  "dataset_id": "FraunhoferIOSB/Synset-Signset-Germany-GTSRB-Subset",
+  "revision": "9d47eb87b975737551f7b16c401e118650123b47",
+  "license": "CC-BY-4.0",
+  "files": [
+    {"path": "cycles/train.parquet", "bytes": 1495705131, "sha256": "36e022e54b8b7cdce4d4c02be93fb8cd6d905c61e29a487a85b8d429ab82386e"},
+    {"path": "cycles/validation.parquet", "bytes": 374763057, "sha256": "6c6792746ddf313c608b688c5c9baf20d80bc0ffeaa11a667db08514b2b46706"},
+    {"path": "ogre/train.parquet", "bytes": 1351430142, "sha256": "57052adae36364584b460de25e30e1c113ddb4b04f634f3f21d5a6a640332637"},
+    {"path": "ogre/validation.parquet", "bytes": 338844687, "sha256": "58afa301df992c3c4e1d31dc055610d41c458cc65e60b58aefcc6f89b3263eee"}
+  ],
+  "real_training": {
+    "path": "artifacts/convnext_gtsrb_v1/GTSRB_Final_Training_Images.zip",
+    "sha256": "d32ac4b5fa9a1cbd1994768413902e8193599d9434cf0a8eb9cfd00a6d3a290c",
+    "bytes": 276294756,
+    "records": 39209,
+    "url": "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/GTSRB_Final_Training_Images.zip"
+  },
+  "source_checkpoint_sha256": "7d05d68074146c668e45b314348acdd4dbe4b5904a980a99c6c81d91dee0d773",
+  "provenance": {
+    "record_generation": "OCTAS physics-based Cycles/OGRE renderings; paired scene variants",
+    "templates": "Wikipedia German traffic-sign templates",
+    "environment_assets": "PolyHaven maps and tree",
+    "texture_generator": "Pix2Pix trained on 200+ worn traffic signs; training-record identifiers not supplied in inspected paper/dataset card",
+    "texture_training_independence_from_gtsrb": "UNRESOLVED",
+    "independence_proven_by_pixel_audit": false,
+    "sources": [
+      "https://arxiv.org/html/2512.05936v1#S3.SS1.SSS1",
+      "https://huggingface.co/datasets/FraunhoferIOSB/Synset-Signset-Germany-GTSRB-Subset/blob/9d47eb87b975737551f7b16c401e118650123b47/README.md",
+      "https://synset.de/datasets/synset-signset-ger/"
+    ]
+  }
+}

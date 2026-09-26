@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "private-robustness-reproduction"
+version = "1.1.0"
+description = "Reproducible experiments for private robust fine-tuning"
+readme = "README.md"
+requires-python = "==3.11.*"
+license = {file = "LICENSE"}
+authors = [{name = "Anonymous Authors"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.scripts]
+reproduce-train = "trustml.train:main"
+reproduce-autoattack = "trustml.dev_autoattack:main"
+reproduce-pretraining = "trustml.pretraining.cli:main"
+reproduce-official-test = "trustml.official_test:main"
+reproduce-official-summary = "trustml.official_test_aggregation:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,96 @@
+format_version: 1
+immutable_selection: true
+launch_authorized_by_this_file: false
+official_test_allowed: false
+
+selection_context:
+  selection_data: fixed_public_real_dev_4020_seed42
+  selected_after_viewing_dev_results: true
+  preregistered_before_dev: false
+  primary_comparison: independently_tuned_near_equal_clean_Joint_vs_Componentwise
+  exact_comparison: JointMatched_vs_same_Componentwise
+  descriptive_reproduction_rule: >-
+    With beta fixed at 1, choose the highest-AA evaluated Joint, then the
+    highest-AA evaluated Componentwise with clean at least that Joint's clean.
+    This reproduces the agreed operating points; it is not a retroactive
+    claim that the rule was preregistered before the GTSRB results.
+  componentwise_clean_floor_percent: 60.37313432835821
+  observed_practical_clean_gap_pp: -0.12437810945272787
+  historical_one_se_result_is_primary: false
+  preserve_full_frontiers_and_alternative_operating_points: true
+  post_confirmation_reselection: forbidden
+  post_test_reselection: forbidden
+  clean_matching_on_future_seeds_guaranteed: false
+
+shared_protocol:
+  base_path: configs/ssg_gtsrb_rect57_v2/protocol.json
+  executed_base_file_sha256: 8afac959beeab01e1c19121f59f9ddfa27a5331e183876352e10119112c48593
+  source_epoch: 50
+  source_checkpoint_sha256: 862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60
+  beta: 1
+  C: 1.0
+  noise_multiplier: 1.22344970703125
+  absolute_noise_std_before_averaging: 1.22344970703125
+  logical_batch_size: 512
+  physical_batch_size: 128
+  optimizer_steps: 3436
+  target_epsilon: 4
+  delta: 0.00001
+  sampling: poisson_add_remove_image
+  sampling_probability_expression: 512/35189
+  outer_kl: full_clean_and_adversarial_branches
+  adversarial_input_detached_in_outer: true
+  inherited_trained_head: true
+  checkpoint_rule: fixed_final_iterate
+  trainable_mask_sha256: d2f6170d562a191b5a66baa0584ae472af2a052ed9a42d6961f78646e8771284
+  dev_order_sha256: da0b5fa6364952d92f3d6e9356eaf4f23dcfe1a6b06871e1aab07be8bce28a24
+
+roles:
+  Joint_practical:
+    run_id: rect57_joint_c100_lr0100_s42
+    strategy: Joint
+    C: 1.0
+    learning_rate: 0.1
+    q: null
+    config_path: configs/ssg_gtsrb_rect57_v2/runs/rect57_joint_c100_lr0100_s42.json
+    config_file_sha256: 1794f97a655d610d21e353edbb0abff320fee398b7958ee6b8f791863b628172
+    canonical_config_sha256: 00c61e39502b308fb514d292f64837d65381d3d92a124eb9ed6bf782c3e77c40
+    checkpoint_sha256: 6b73ba38b7a99bc8c2c7e3623b1b407a99bc8f3d8f822f01eda3f6e36e38eaf7
+    dev_clean_percent: 60.37313432835821
+    dev_aa_percent: 15.248756218905474
+  Componentwise:
+    run_id: rect57_componentwise_c100_lr0025_q1of3_s42
+    strategy: Componentwise
+    C: 1.0
+    learning_rate: 0.025
+    q: 0.3333333333333333
+    config_path: configs/ssg_gtsrb_rect57_v2/runs/rect57_componentwise_c100_lr0025_q1of3_s42.json
+    config_file_sha256: 62cffd8cf67fb0b8ae10a33ce762af87d1495f1b222f049ba76de6110847e922
+    canonical_config_sha256: ef68f8533f9dabaf9ce1778bf11843fe5e48ccd4e2fcf5c1fcc8a18d413ee663
+    checkpoint_sha256: 60642f4cad514d86ae904f9a00863c4c939a5ad44d701c1235b3c42a51dc7465
+    dev_clean_percent: 60.49751243781094
+    dev_aa_percent: 13.955223880597014
+  JointMatched:
+    run_id: rect57_joint_c100_lr0025_s42
+    strategy: Joint
+    C: 1.0
+    learning_rate: 0.025
+    q: null
+    config_path: configs/ssg_gtsrb_rect57_v2/runs/rect57_joint_c100_lr0025_s42.json
+    config_file_sha256: 510b07cd234e1b611b00888d3e5a6c1251b7b8cdb085ddd22054d742a2fd0865
+    canonical_config_sha256: dac0b12a00576c6079a3ae23452e7b0041e69a7e0018ee3b30a2b55ed17e70a5
+    checkpoint_sha256: aea994b88e7abea9d1718abb0709337a78618086907204357cb1efb3b1cb247f
+    dev_clean_percent: 63.233830845771145
+    dev_aa_percent: 14.029850746268657
+
+boundaries:
+  hard_q_extension_authorized: false
+  soft_selection_locked: false
+  clean_dp_and_non_dp_baseline_selection_newly_locked: false
+  old_autos_grid_recalibration_authorized: false
+  new_jobs_submitted: 0
+  open_gates:
+    - enhanced_attack_diagnostics_for_selected_checkpoints
+    - explicit_privacy_crosscheck_disposition_without_changing_sigma
+    - confirmation_and_DMR_design_preflight
+    - freeze_future_test_roster_and_checkpoint_hashes

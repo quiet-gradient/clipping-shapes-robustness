@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trustml"
+version = "0.1.0"
+description = "Platform-independent PyTorch research runner with local, SSH, DataSphere, W&B, and MLM adapters."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch",
+  "torchvision",
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "tqdm",
+  "omegaconf",
+  "wandb",
+  "pyyaml",
+  "opacus",
+  "scipy",
+]
+
+[project.optional-dependencies]
+s3 = ["boto3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
