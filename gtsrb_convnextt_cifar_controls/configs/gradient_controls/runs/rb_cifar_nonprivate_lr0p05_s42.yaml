@@ -1,0 +1,87 @@
+experiment:
+  name: rb_cifar_nonprivate_lr0p05_s42
+  seed: 42
+  deterministic: true
+data:
+  name: cifar10
+  root: ${oc.env:DATA_ROOT,./data}
+  batch_size: 512
+  num_workers: 0
+  train_ratio: 0.9
+  seed: 20260820
+  download: false
+  augmentation: true
+  mean:
+  - 0.4914
+  - 0.4822
+  - 0.4465
+  std:
+  - 0.2023
+  - 0.1994
+  - 0.201
+model:
+  name: resnet18
+  num_classes: 10
+  pretrained: false
+  weights_path: ../cifar10_resnet18/artifacts/public_pretrain/checkpoint_epoch_170.pt
+  strict_load: false
+  skip_mismatched: true
+  reinit_classifier_on_mismatch: true
+  source_pretrain:
+    protocol: final_v1
+    beta: 3
+    seed: 42
+    epoch: 170
+    selection_lock: configs/pretrain/pretrain_selection_locked.yaml
+  spectral_norm:
+    enabled: false
+    power_iterations: 1
+    coeff: 1.0
+adaptation:
+  method: last_block
+  train_last_block: true
+training:
+  epochs: 50
+  optimizer:
+    name: sgd
+    lr: 0.05
+    momentum: 0.9
+    weight_decay: 0.0005
+    nesterov: true
+  scheduler:
+    name: cosine
+    eta_min_factor: 0.01
+intervention:
+  map_name: autos
+  arm: J
+  q: 0.25
+  bound: 1.0
+  gamma: 0.1
+  beta: 1.0
+  steps: 4400
+  batches_per_epoch: 88
+  sampling_probability: 0.011363636363636364
+  denominator: 512
+  microbatch_size: 32
+  pretrain_sha256: 53211c5f45c3a2a9171448fade104c0d3c8fd7649482827063240b3808796262
+  dataset_sha256: 6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce
+  outer_kl_target: detached_clean
+  zero_direction: zero
+  joint_release_dp_claim: false
+control:
+  method: nonprivate
+  sigma: 0.0
+  target_epsilon: null
+  delta: 1.0e-05
+  planned_steps: 4400
+  pilot_steps: 100
+  checkpoint_interval: 100
+  public_probe_steps:
+  - 0
+  - 1100
+  - 2200
+  - 3300
+  - 4400
+  resume_validation_required: true
+  noise_coupling_scope: independent from historical private roots
+  formal_privacy_claim: false

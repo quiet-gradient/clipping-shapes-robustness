@@ -1,0 +1,481 @@
+{
+  "execution": {
+    "microbatch_audit": {
+      "accountant_steps": 0,
+      "caveat": "fixed-x_adv numerical equivalence; not bitwise PGD trajectory or final accuracy guarantee",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "logical_batch": 512,
+      "official_test_loaded": false,
+      "optimizer_steps": 0,
+      "private_records_used": 0,
+      "probe_hash": "93082df614fe82cf970bcb142bd8fddd06262614922d6c8fed906c7de0e43ad7",
+      "public_records": 512,
+      "rows": [
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 2.1054532790003577,
+          "estimated_train_only_hours": 2.00953818517923,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 8,
+          "peak_allocated_bytes": 2298931200,
+          "peak_reserved_bytes": 2774532096,
+          "per_example_relative_l2": {},
+          "projected_peak_bytes": 3291263680,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 0.0
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 1.239920770001845,
+          "estimated_train_only_hours": 1.1834354904795388,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 16,
+          "peak_allocated_bytes": 4176796160,
+          "peak_reserved_bytes": 5161091072,
+          "per_example_relative_l2": {
+            "g": 6.497800446128763e-07
+          },
+          "projected_peak_bytes": 5169128640,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.7194741538948758e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 0.8269546859974071,
+          "estimated_train_only_hours": 0.7892823058575252,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 32,
+          "peak_allocated_bytes": 7943601152,
+          "peak_reserved_bytes": 9950986240,
+          "per_example_relative_l2": {
+            "g": 6.062144112637406e-07
+          },
+          "projected_peak_bytes": 8935933632,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.495551389662182e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 0.6434660119975888,
+          "estimated_train_only_hours": 0.6141525603399208,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 64,
+          "peak_allocated_bytes": 15472894464,
+          "peak_reserved_bytes": 19461570560,
+          "per_example_relative_l2": {
+            "g": 5.946552819624756e-07
+          },
+          "projected_peak_bytes": 16465226944,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.737014837888223e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 0.6088540949986054,
+          "estimated_train_only_hours": 0.581117408448669,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 96,
+          "peak_allocated_bytes": 22999149056,
+          "peak_reserved_bytes": 29018292224,
+          "per_example_relative_l2": {
+            "g": 5.429544071302196e-07
+          },
+          "projected_peak_bytes": 23991481536,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.5916413285645596e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 0.5713587200025358,
+          "estimated_train_only_hours": 0.5453301560913092,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 128,
+          "peak_allocated_bytes": 30528031744,
+          "peak_reserved_bytes": 38520487936,
+          "per_example_relative_l2": {
+            "g": 6.938177021187577e-07
+          },
+          "projected_peak_bytes": 31520364224,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.6470054297601528e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 0.9668034569986048,
+          "estimated_train_only_hours": 0.9227601884020017,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 192,
+          "peak_allocated_bytes": 45585021952,
+          "peak_reserved_bytes": 57598279680,
+          "per_example_relative_l2": {
+            "g": 5.614727292057838e-07
+          },
+          "projected_peak_bytes": 46577354432,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.5772387243587672e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 1.8010214380010439,
+          "estimated_train_only_hours": 1.7189749058254407,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 256,
+          "peak_allocated_bytes": 60640179712,
+          "peak_reserved_bytes": 77150027776,
+          "per_example_relative_l2": {
+            "g": 5.991715630526583e-07
+          },
+          "projected_peak_bytes": 61632512192,
+          "public_records": 512,
+          "role": "DPOnly",
+          "status": "PASS",
+          "sum_relative_l2": 1.8788141962527077e-07
+        },
+        {
+          "microbatch": 384,
+          "role": "DPOnly",
+          "status": "PUBLIC_CAPACITY_OOM"
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 20.915235428001324,
+          "estimated_train_only_hours": 19.962430258503485,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 8,
+          "peak_allocated_bytes": 2815399936,
+          "peak_reserved_bytes": 3609198592,
+          "per_example_relative_l2": {},
+          "projected_peak_bytes": 3807732416,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 0.0
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 10.561856425998485,
+          "estimated_train_only_hours": 10.08070518881411,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 16,
+          "peak_allocated_bytes": 5215578624,
+          "peak_reserved_bytes": 6822035456,
+          "per_example_relative_l2": {
+            "g": 6.497800446128763e-07,
+            "h": 9.986913386304345e-07
+          },
+          "projected_peak_bytes": 6207911104,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 1.8685832966536695e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 5.628030212001249,
+          "estimated_train_only_hours": 5.371642169010081,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 32,
+          "peak_allocated_bytes": 10017980416,
+          "peak_reserved_bytes": 13306429440,
+          "per_example_relative_l2": {
+            "g": 6.062144112637406e-07,
+            "h": 1.1629201027856531e-06
+          },
+          "projected_peak_bytes": 11010312896,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 1.8988992306483005e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.518687313002374,
+          "estimated_train_only_hours": 3.358391557632266,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 64,
+          "peak_allocated_bytes": 19624044032,
+          "peak_reserved_bytes": 26132611072,
+          "per_example_relative_l2": {
+            "g": 5.946552819624756e-07,
+            "h": 1.1269039087378463e-06
+          },
+          "projected_peak_bytes": 20616376512,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 2.1041490428084353e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.3897808860001533,
+          "estimated_train_only_hours": 3.235357534526813,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 96,
+          "peak_allocated_bytes": 29211586048,
+          "peak_reserved_bytes": 39072038912,
+          "per_example_relative_l2": {
+            "g": 5.429544071302196e-07,
+            "h": 1.1354220183599712e-06
+          },
+          "projected_peak_bytes": 30203918528,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 1.9337196483674083e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.105882769003074,
+          "estimated_train_only_hours": 2.9643925539707117,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 128,
+          "peak_allocated_bytes": 38817102336,
+          "peak_reserved_bytes": 51898220544,
+          "per_example_relative_l2": {
+            "g": 6.938177021187577e-07,
+            "h": 1.3036398429505488e-06
+          },
+          "projected_peak_bytes": 39809434816,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 2.0553100641803364e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.3502609110000776,
+          "estimated_train_only_hours": 3.1976379139434075,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 192,
+          "peak_allocated_bytes": 58004891136,
+          "peak_reserved_bytes": 77661732864,
+          "per_example_relative_l2": {
+            "g": 5.614727292057838e-07,
+            "h": 1.2123482886674665e-06
+          },
+          "projected_peak_bytes": 58997223616,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "PASS",
+          "sum_relative_l2": 1.9438632101284486e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 4.926552512000853,
+          "estimated_train_only_hours": 4.7021206753430365,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": false,
+          "microbatch": 256,
+          "peak_allocated_bytes": 77198611456,
+          "peak_reserved_bytes": 83762348032,
+          "per_example_relative_l2": {
+            "g": 5.991715630526583e-07,
+            "h": 1.0479160839535513e-06
+          },
+          "projected_peak_bytes": 78190943936,
+          "public_records": 512,
+          "role": "Joint",
+          "status": "HEADROOM_LIMIT",
+          "sum_relative_l2": 2.2966861625369256e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 20.563363701001435,
+          "estimated_train_only_hours": 19.626588243511367,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 8,
+          "peak_allocated_bytes": 2896623616,
+          "peak_reserved_bytes": 4106223616,
+          "per_example_relative_l2": {},
+          "projected_peak_bytes": 3888956096,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 0.0
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 10.619298268004059,
+          "estimated_train_only_hours": 10.135530235794985,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 16,
+          "peak_allocated_bytes": 5373162496,
+          "peak_reserved_bytes": 7816085504,
+          "per_example_relative_l2": {
+            "g": 6.497800446128763e-07,
+            "h": 9.986913386304345e-07
+          },
+          "projected_peak_bytes": 6365494976,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 3.973073761616035e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 5.690650017000735,
+          "estimated_train_only_hours": 5.431409294004035,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 32,
+          "peak_allocated_bytes": 10334823936,
+          "peak_reserved_bytes": 15292432384,
+          "per_example_relative_l2": {
+            "g": 6.062144112637406e-07,
+            "h": 1.1629201027856531e-06
+          },
+          "projected_peak_bytes": 11327156416,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 3.392056318957646e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.572050549000778,
+          "estimated_train_only_hours": 3.4093238017685206,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 64,
+          "peak_allocated_bytes": 20261042176,
+          "peak_reserved_bytes": 30102519808,
+          "per_example_relative_l2": {
+            "g": 5.946552819624756e-07,
+            "h": 1.1269039087378463e-06
+          },
+          "projected_peak_bytes": 21253374656,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 5.090745171086139e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.450090034997629,
+          "estimated_train_only_hours": 3.292919266736626,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 96,
+          "peak_allocated_bytes": 30181474816,
+          "peak_reserved_bytes": 45027950592,
+          "per_example_relative_l2": {
+            "g": 5.429544071302196e-07,
+            "h": 1.1354220183599712e-06
+          },
+          "projected_peak_bytes": 31173807296,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 3.8519332052988507e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 3.3769006280017493,
+          "estimated_train_only_hours": 3.2230640438372253,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 128,
+          "peak_allocated_bytes": 40104797696,
+          "peak_reserved_bytes": 59838038016,
+          "per_example_relative_l2": {
+            "g": 6.938177021187577e-07,
+            "h": 1.3036398429505488e-06
+          },
+          "projected_peak_bytes": 41097130176,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 4.374067583445462e-07
+        },
+        {
+          "device_memory_bytes": 85174583296,
+          "elapsed_compute_seconds": 4.315431858000011,
+          "estimated_train_only_hours": 4.118839962246677,
+          "extra_training_allowance_bytes": 992332480,
+          "gradient_equivalent": true,
+          "memory_headroom_pass": true,
+          "microbatch": 192,
+          "peak_allocated_bytes": 59951448576,
+          "peak_reserved_bytes": 77806436352,
+          "per_example_relative_l2": {
+            "g": 5.614727292057838e-07,
+            "h": 1.2123482886674665e-06
+          },
+          "projected_peak_bytes": 60943781056,
+          "public_records": 512,
+          "role": "Componentwise",
+          "status": "PASS",
+          "sum_relative_l2": 4.374977627120282e-07
+        },
+        {
+          "microbatch": 256,
+          "role": "Componentwise",
+          "status": "PUBLIC_CAPACITY_OOM"
+        }
+      ],
+      "selected_microbatch_by_role": {
+        "CleanDP": 256,
+        "Componentwise": 192,
+        "Joint": 192
+      },
+      "source_checkpoint_sha256": "862b1bd943b069b0eb25de6f3c7526394d68c80fd0f4de2651ea5ab94fa12a60",
+      "split_hash": "8a9cb192c38a7c71a83ce3087ed2310ac7200a203fad17bd08923c514dd03a1f",
+      "status": "PASS",
+      "trainable_parameter_count": 15505195
+    },
+    "microbatch_policy": "fastest_common_safe"
+  }
+}

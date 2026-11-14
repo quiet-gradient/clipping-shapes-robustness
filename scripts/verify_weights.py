@@ -1,4 +1,4 @@
-"""Verify downloaded GTSRB release assets against the frozen manifest."""
+"""Verify downloaded evaluation weights against the release manifests."""
 
 from __future__ import annotations
 
@@ -11,16 +11,19 @@ from pathlib import Path
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--directory", type=Path, default=Path("weights/files"))
-    parser.add_argument("--manifest", type=Path, default=Path("weights/manifest.json"))
+    parser.add_argument("--manifest", type=Path, action="append")
     parser.add_argument("--allow-partial", action="store_true")
     args = parser.parse_args()
 
-    manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
-    assets = manifest["assets"]
-    if len(assets) != manifest["asset_count"]:
-        raise SystemExit("manifest asset count mismatch")
-    if sum(row["bytes"] for row in assets) != manifest["total_bytes"]:
-        raise SystemExit("manifest byte count mismatch")
+    manifests = args.manifest or [Path("weights/manifest.json"), Path("weights/additional_manifest.json")]
+    assets = []
+    for path in manifests:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        if len(manifest["assets"]) != manifest["asset_count"]:
+            raise SystemExit(f"manifest asset count mismatch: {path}")
+        if sum(row["bytes"] for row in manifest["assets"]) != manifest["total_bytes"]:
+            raise SystemExit(f"manifest byte count mismatch: {path}")
+        assets.extend(manifest["assets"])
 
     seen: set[str] = set()
     checked = 0

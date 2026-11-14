@@ -1,0 +1,5 @@
+# Install from gtsrb_convnextt_cifar_controls/.
+-r requirements.lock
+omegaconf==2.3.1
+tqdm==4.67.1
+./vendor/autoattack-0.1-py3-none-any.whl

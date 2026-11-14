@@ -1,18 +1,17 @@
-# GTSRB evaluation weights
+# Evaluation weights
 
-`manifest.json` lists one selected public-pretraining model and 51 tested
-GTSRB fine-tuning models. Download the 52 `.pt` assets from the `weights-v1`
-release into `weights/files/`, then run the verifier in the repository README.
+Download the `.pt` assets from the `weights-v1` GitHub release into
+`weights/files/`. The root README gives verification and loading commands.
 
-Each asset contains a `model` state dictionary and provenance digests. The
-weights are for inference and attack evaluation; they are not complete
-training-resume checkpoints. The manifest maps each asset to its run and,
-where applicable, official-test evaluation identifier. It does not include
-private examples, attack masks, optimizer state, or RNG state. Per-run DP
-accounting does not itself establish a joint privacy guarantee for releasing
-multiple models trained on overlapping private data.
+- `manifest.json`: 52 original GTSRB assets (public initialization and 51 evaluated models).
+- `additional_manifest.json`: 82 CIFAR assets (public initialization, 54 original test models, 24 additional test models and three dev-selection models), plus six additional GTSRB fixed-norm models.
 
-The 51 fine-tuned weights include three non-DP Natural baselines and six
-zero-noise reviewer controls. These nine models must not be described as
-private. The other models' individual accounting statements must not be
-mistaken for an epsilon-4 guarantee for the entire collection.
+The manifests map each weight file to its run, seed, cohort and source/export
+SHA-256 digests. All exports contain model tensors and loading metadata;
+optimizer, RNG and private-training records are excluded. They support
+inference and attack evaluation rather than training resume. CIFAR's public
+initialization has 100 output classes; its fine-tuned models have 10.
+
+Non-private baselines and zero-noise controls do not have private-training
+guarantees. Accounting for individual private runs does not certify the joint
+release of the model collection.
